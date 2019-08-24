@@ -10,7 +10,9 @@ if [[ "$(id -u)" -ne 0 ]]; then
    exit 1
 fi
 
-}
+}kali > cd <path to directory>
+kali > chmod +x install.sh
+kali > ./install.sh
 
 checkroot
 
@@ -21,4 +23,3 @@ checkroot
 (trap '' SIGINT SIGTSTP && command -v curl > /dev/null 2>&1 || { printf >&2  "\e[1;92mInstalling cURL, please wait...\n\e[0m"; apt-get update > /dev/null && apt-get -y install curl > /dev/null || printf "\e[1;91mCurl Not installed.\n\e[0m"; }) & wait $!
 
 printf "\e[1;92mAll Requires are installed!\n\e[0m"
-
